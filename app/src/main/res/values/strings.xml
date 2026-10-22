@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DeX回転</string>
+    <string name="label_rot_0">回転 0°</string>
+    <string name="label_rot_90">回転 90°</string>
+    <string name="label_rot_180">回転 180°</string>
+    <string name="label_rot_270">回転 270°</string>
+
+    <string name="status_not_running">Shizuku が起動していません。Shizuku アプリから起動してください。</string>
+    <string name="status_no_permission">Shizuku の権限が未許可です。</string>
+    <string name="status_ready">Shizuku: 準備完了</string>
+    <string name="request_permission">Shizuku の権限を許可</string>
+    <string name="shizuku_not_running">Shizuku が起動していません</string>
+    <string name="shizuku_too_old">Shizuku が古すぎます (v11 以上が必要)</string>
+    <string name="shizuku_denied_before">以前に拒否されています。Shizuku アプリの「許可したアプリ」から許可してください</string>
+    <string name="target_display">対象: %1$s</string>
+    <string name="target_display_rotation">対象: %1$s / 現在 %2$s°</string>
+    <string name="error_rotate">回転に失敗: %1$s</string>
+    <string name="hint">モニターの通常の横向きが 0° (↓)。アプリ一覧の「回転 0°/90°/180°/270°」アイコンからも直接回せます。</string>
+    <string name="cd_rot_0">0°</string>
+    <string name="cd_rot_90">90°</string>
+    <string name="cd_rot_180">180°</string>
+    <string name="cd_rot_270">270°</string>
+</resources>

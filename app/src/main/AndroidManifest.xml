@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:resizeableActivity="true"
+        android:theme="@style/AppTheme">
+
+        <!-- Shizuku -->
+        <provider
+            android:name="rikka.shizuku.ShizukuProvider"
+            android:authorities="${applicationId}.shizuku"
+            android:enabled="true"
+            android:exported="true"
+            android:multiprocess="false"
+            android:permission="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Trampoline launched from the arrow icons; Theme.NoDisplay never shows a window -->
+        <activity
+            android:name=".RotateActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.NoDisplay" />
+
+        <!-- Does the actual rotation in the background -->
+        <service
+            android:name=".RotateService"
+            android:exported="false" />
+
+        <!--
+          Arrow icons. The monitor's normal landscape is 0 degrees.
+          down = 0, left = 90, up = 180, right = 270.
+        -->
+        <activity-alias
+            android:name=".Rotate0"
+            android:targetActivity=".RotateActivity"
+            android:exported="true"
+            android:icon="@mipmap/ic_rot_180"
+            android:label="@string/label_rot_0">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="jp.ginji.dexrotate.ROTATION" android:value="0" />
+        </activity-alias>
+
+        <activity-alias
+            android:name=".Rotate90"
+            android:targetActivity=".RotateActivity"
+            android:exported="true"
+            android:icon="@mipmap/ic_rot_270"
+            android:label="@string/label_rot_90">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="jp.ginji.dexrotate.ROTATION" android:value="1" />
+        </activity-alias>
+
+        <activity-alias
+            android:name=".Rotate180"
+            android:targetActivity=".RotateActivity"
+            android:exported="true"
+            android:icon="@mipmap/ic_rot_0"
+            android:label="@string/label_rot_180">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="jp.ginji.dexrotate.ROTATION" android:value="2" />
+        </activity-alias>
+
+        <activity-alias
+            android:name=".Rotate270"
+            android:targetActivity=".RotateActivity"
+            android:exported="true"
+            android:icon="@mipmap/ic_rot_90"
+            android:label="@string/label_rot_270">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="jp.ginji.dexrotate.ROTATION" android:value="3" />
+        </activity-alias>
+
+    </application>
+</manifest>
